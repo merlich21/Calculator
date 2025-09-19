@@ -11,8 +11,7 @@ public class Main {
             res = scanner.nextInt();
         }
         catch (Exception e) {
-//            throw new RuntimeException(e);
-            System.out.println("ERROR! Enter a numeric value (type int)");
+            System.out.println("ERROR INPUT! Enter a numeric value (type int)!");
         }
         return res;
     }

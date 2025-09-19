@@ -30,13 +30,13 @@ public class Calculator {
                 break;
             case '/':
                 if (op2 == 0) {
-                    System.out.println("Error: Dividing by Zero");
+                    System.out.println("ERROR: Dividing by Zero");
                     break;
                 }
                 res = div(op1, op2);
                 break;
             default:
-                System.out.println("Wrong operator");
+                System.out.println("ERROR! WRONG OPERATOR");
         }
         return res;
     }
