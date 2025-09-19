@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Calculator {
 
     private static int add(int a, int b) {
