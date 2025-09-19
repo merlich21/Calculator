@@ -2,22 +2,21 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static int operandScanner(Scanner scanner, String msg) {
+    public static double operandScanner(Scanner scanner, String msg) {
 
-        int res = 0;
+        double res = 0;
 
         System.out.println(msg);
         try {
-            res = scanner.nextInt();
-        }
-        catch (Exception e) {
-            System.out.println("ERROR INPUT! Enter a numeric value (type int)!");
+            res = scanner.nextDouble();
+        } catch (Exception e) {
+            System.out.println("ERROR INPUT! Enter a numeric value (type double)!");
         }
         return res;
     }
 
     public static void checkStop(char ch) {
-        if (ch =='S' || ch == 's') {
+        if (ch == 'S' || ch == 's') {
             System.exit(0);
         }
     }
@@ -29,24 +28,22 @@ public class Main {
         System.out.println(msg);
         ch = scanner.next().charAt(0);
         checkStop(ch);
-
         return ch;
     }
-
 
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-        int operand1 = operandScanner(scanner, "Enter first number: ");
-        int operand2 = 0;
-        int result = 0;
+        double operand1 = operandScanner(scanner, "Enter first number: ");
+        double operand2 = 0;
+        double result = 0;
         while (true) {
             char operation = operationScanner(scanner, "Enter operator: ");
-            if (operation !='+' && operation != '-'
-                    && operation !='*' && operation != '/'
-                    && operation !='C' && operation != 'c') {
+            if (operation != '+' && operation != '-'
+                    && operation != '*' && operation != '/'
+                    && operation != 'C' && operation != 'c') {
                 System.out.println("ERROR! WRONG OPERATOR!");
                 continue;
             }
