@@ -36,7 +36,7 @@ public class Calculator {
                 res = div(op1, op2);
                 break;
             default:
-                System.out.println("Wrong operation");
+                System.out.println("Wrong operator");
         }
         return res;
     }
