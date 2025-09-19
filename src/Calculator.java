@@ -1,42 +1,64 @@
+/*
+
+ * Calculator project
+ *
+ * Version information
+ *
+ * 19.09.2025
+ *
+ * author: AlexandSko
+ */
+
+
+/**
+ *
+ Calculator Class.
+ *
+ * @version
+1.7 19 Sep 2025  * @author
+Skotnikov Alexander  */
 public class Calculator {
 
     private static double add(double a, double b) {
         return a + b;
     }
 
-    private static double sub(double c, double d) {
+    private static double subtract(double c, double d) {
         return c - d;
     }
 
-    private static double mult(double e, double f) {
+    private static double multiply(double e, double f) {
         return e * f;
     }
 
-    private static double div(double g, double h) {
+    private static double divide(double g, double h) {
         return g / h;
     }
 
-    public static double calculate(double op1, double op2, char operation, double res) {
+    public static double calculate(double operand1,
+                                   double operand2,
+                                   char operator,
+                                   double res) {
 
-        switch (operation) {
+        switch (operator) {
             case '+':
-                res = add(op1, op2);
+                res = add(operand1, operand2);
                 break;
             case '-':
-                res = sub(op1, op2);
+                res = subtract(operand1, operand2);
                 break;
             case '*':
-                res = mult(op1, op2);
+                res = multiply(operand1, operand2);
                 break;
             case '/':
-                if (op2 == 0) {
-                    System.out.println("ERROR: Dividing by Zero");
+                if (operand2 == 0) {
+                    System.out.println("ERROR: dividing by Zero!");
                     break;
                 }
-                res = div(op1, op2);
+                res = divide(operand1, operand2);
                 break;
             default:
-                System.out.println("ERROR! WRONG OPERATOR");
+                System.out.println("ERROR! WRONG OPERATOR!");
         }
         return res;
     }
