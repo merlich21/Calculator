@@ -1,8 +1,20 @@
+/*
+
+ * Calculator project
+ *
+ * Version information
+ *
+ * 19.09.2025
+ *
+ * author: AlexandSko
+ */
+
+
 import java.util.Scanner;
 
 public class Main {
 
-    public static double operandScanner(Scanner scanner, String msg) {
+    public static double scanOperand(Scanner scanner, String msg) {
 
         double res = 0;
 
@@ -10,7 +22,8 @@ public class Main {
         try {
             res = scanner.nextDouble();
         } catch (Exception e) {
-            System.out.println("ERROR INPUT! Enter a numeric value (type double)!");
+            System.out.println("ERROR INPUT! " +
+                    "Enter a numeric value (type double)!");
         }
         return res;
     }
@@ -21,7 +34,7 @@ public class Main {
         }
     }
 
-    public static char operationScanner(Scanner scanner, String msg) {
+    public static char scanOperator(Scanner scanner, String msg) {
 
         char ch = 0;
 
@@ -35,28 +48,27 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
-        double operand1 = operandScanner(scanner, "Enter first number: ");
+        double operand1 = scanOperand(scanner, "Enter first number: ");
         double operand2 = 0;
         double result = 0;
+
         while (true) {
-            char operation = operationScanner(scanner, "Enter operator: ");
-            if (operation != '+' && operation != '-'
-                    && operation != '*' && operation != '/'
-                    && operation != 'C' && operation != 'c') {
+            char operator = scanOperator(scanner, "Enter operator: ");
+            if (operator != '+' && operator != '-'
+                    && operator != '*' && operator != '/'
+                    && operator != 'C' && operator != 'c') {
                 System.out.println("ERROR! WRONG OPERATOR!");
                 continue;
             }
-            if (operation == 'C' || operation == 'c') {
+            if (operator == 'C' || operator == 'c') {
                 operand1 = 0;
                 result = 0;
                 System.out.println("Result = " + result);
                 continue;
             }
-            operand2 = operandScanner(scanner, "Enter second number: ");
-
-            result = Calculator
-                    .calculate(operand1, operand2, operation, result);
+            operand2 = scanOperand(scanner, "Enter second number: ");
+            result = Calculator.
+                    calculate(operand1, operand2, operator, result);
             System.out.println("Result = " + result);
             operand1 = result;
         }
